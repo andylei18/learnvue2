@@ -8,7 +8,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: require('../views/Home')
+      //component: require('../views/Home')
+      component: (resolve) => {
+      	require(['../views/Home'], resolve)
+      }
+    },
+    {
+      path: '/detail',
+      name:'detail',
+      component: (resolve) => {
+      	require(['../views/mall/detail/index'], resolve)
+      }
     }
   ]
 })
